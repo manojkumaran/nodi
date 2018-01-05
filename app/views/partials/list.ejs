@@ -1,0 +1,11 @@
+<div class="row">
+           <% for(var i=0; i < products.length; i++){ %>
+                <div class="col-md-4">
+                    <h2> <%= products[i].skuId %></h2>
+                    <img src="<%=products[i].imageUrl %><%=products[i].mediumImageUrl%>" alt="<%=products[i].shortDescription%>"/>
+                    <p><%-products[i].shortDescription%> </p>
+                    <p><a class="btn btn-primary atc" href="#" role="button" data-skuId="<%= products[i].skuId %>">Add to Cart</a></p>
+                </div>
+           <% } %>
+</div>
+<div class="row more"></div>

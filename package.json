@@ -1,0 +1,32 @@
+{
+  "name": "nodi",
+  "version": "1.0.0",
+  "description": "\"A website using node and expressjs\"",
+  "main": "app/app.js",
+  "scripts": {
+      "start": "nodemon -e css,ejs,js,json --watch app" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manojkumaran/nodi.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "fishes",
+    "manoj"
+  ],
+  "author": "Manoj Kumar Amalraj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manojkumaran/nodi/issues"
+  },
+  "homepage": "https://github.com/manojkumaran/nodi#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "reload": "^2.2.2",
+    "socket.io": "^2.0.4"
+  }
+}

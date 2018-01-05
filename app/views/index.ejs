@@ -1,0 +1,29 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <% include partials/header.ejs %>
+    </head>
+    <body>
+        <header>
+            <% include partials/nav.ejs %>
+        </header>
+
+        <% if(pageId == 'home'){ %>
+            <section class="container">
+                    <h1>Our Product List </h1>
+                    <% include partials/list.ejs %>
+                    <a href="javascript:void(0)" class="btn btn-secondary loadmore" role="button">Load More...</a>
+            </section>
+        <% } %>
+
+        <% if(pageId == 'crafts'){ %>
+            <% include partials/crafts.ejs %>
+        <% } %>
+
+        <% if(pageId == 'feedback'){ %>
+            <% include partials/feedback.ejs %>
+        <% } %>
+            
+       <% include partials/footer.ejs %>
+     </body>
+</html>
