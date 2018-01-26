@@ -9,6 +9,7 @@ $(function(){
             email: that.find('.email').val(),
             desc: that.find('.desc').val()
         }, updateFeedback);
+        that.reset();
     });
 
 

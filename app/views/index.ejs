@@ -24,6 +24,10 @@
             <% include partials/feedback.ejs %>
         <% } %>
             
+        <% if(pageId == 'login'){ %>    
+            <% include partials/login.ejs %>
+        <% } %>
+        
        <% include partials/footer.ejs %>
      </body>
 </html>
