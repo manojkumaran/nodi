@@ -17,7 +17,7 @@ router.post('/login', (req,res) => {
          name = req.body.name;
         password = req.body.password;
     }
-
+    console.log(name+password);
     //usually this would be a db call
     var user = users[_.findIndex(users,{name:name})];
     if(!user){
@@ -26,6 +26,7 @@ router.post('/login', (req,res) => {
     if(user.password === password){
         var payload = {id: user.id};
         var token = jwt.sign(payload, jwtOptions.secretOrKey,{expiresIn:'30m'});    //create a jwt token and send as response. token expiry is also set
+        req.session.token = token;
         res.json({message: "ok", token: token});
     }else{
         res.status(401).json({message: "passwords did not match"});

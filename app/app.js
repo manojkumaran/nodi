@@ -2,6 +2,8 @@ var express = require('express');
 var reload = require('reload');
 var app = express();
 var dataFile = require('./data/data.json');
+ 
+var session = require('express-session');
 
 var passport = require("passport");
 var passportJWT = require("passport-jwt");
@@ -56,6 +58,16 @@ app.get("/debug", (req,res,next) => {
 (req,res) =>{
     res.json('debugging');
 });
+
+
+/* session */
+var sess = {
+    secret: 'this is my secret key',
+    cookie: {},
+    saveUninitialized: false,
+    resave: false
+};
+app.use(session(sess));
 
 reload(app);
 var server = app.listen(app.get('port'), function(){
