@@ -17,7 +17,7 @@ router.post('/login', (req,res) => {
          name = req.body.name;
         password = req.body.password;
     }
-    console.log(name+password);
+    
     //usually this would be a db call
     var user = users[_.findIndex(users,{name:name})];
     if(!user){
@@ -35,10 +35,22 @@ router.post('/login', (req,res) => {
 
 
 router.get('/login', (req,res) => {
+    console.log('Session token of user '+ req.session.token);
     res.render('index',{
         pageTitle: 'Login',
         pageId: "login"
     } );
+});
+
+router.get('/logout', (req,res) => {
+    req.session.destroy( (err) => {
+        if(err){
+            console.log(err)
+        }   else {
+            console.log('session cleared. req.session.token is ' + req.session.token );
+            res.redirect('/');
+        }
+    });
 });
 
 module.exports = router;
